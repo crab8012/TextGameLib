@@ -1,6 +1,6 @@
-package space.crab8012.textgamelib.handler.command;
+package space.crab8012.textgamelib.command;
 
-class GameCommand{
+public class GameCommand{
     //This will be the base command.
 
     //Lets us know if the command is loaded.

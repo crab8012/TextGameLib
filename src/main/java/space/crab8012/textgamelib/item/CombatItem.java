@@ -8,5 +8,7 @@ public class CombatItem extends Item{
     private double armourPiercing;
     
     public void doDamage(Entity attacker, Entity defender){
+        int damage = attacker.getStrength();
+        defender.addHealth(-damage);
     }
 }

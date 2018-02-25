@@ -4,21 +4,14 @@ import java.util.Scanner;
 
 import space.crab8012.textgamelib.command.GameCommand;
 import space.crab8012.textgamelib.exception.InvalidNameCharacterException;
+import space.crab8012.textgamelib.exception.InvalidCommandException;
+import java.util.ArrayList;
 
 class InputHandler{
     //Space for Allowed Characters
     String nameAllowed = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
-    
-    //A Space where all commands registered with this InputHandler will go
-    ArrayList<GameCommand> commands;
 
     public InputHandler(){
-        commands = new ArrayList<GameCommand>(); //Instantiate the GameCommands arraylist.
-        
-        //Load in the commands
-        commands.add(new GameCommand()); //Load in the base GameCommand.
-        System.err.println("GameCommand Loaded: " + GameCommand.isLoaded()); //Let us know that the command is loaded.
-
         System.err.println("InputHandler Loaded"); //Let us know that the InputHandler is loaded. Keep at end of constructor.
     }
 
@@ -35,18 +28,5 @@ class InputHandler{
         }
 
         return name;
-    }
-
-    public GameCommand getCommand() throws InvalidCommandException{
-        String commandString = "";
-        Scanner inputScanner = new Scanner(System.in);
-        commandString += inputScanner.next();
-        for(int i = 0; i < commands.size(); i++){
-            if(commandString.equalsIgnoreCase(commands.get(i).getCommandString())){
-                return commands.get(i);
-            }
-        }
-        throw new InvalidCommandException();
-        return null;
     }
 }

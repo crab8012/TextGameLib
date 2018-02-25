@@ -25,4 +25,32 @@ public class Entity {
         this.health = health;
         this.strength = strength;
     }
+
+    public int getStrength(){
+        return strength;
+    }
+
+    public void setStrength(int newStrength){
+        this.strength = newStrength;
+    }
+
+    public void addStrength(int addedStrength){
+        this.strength += addedStrength;
+    }
+
+    public int getHealth(){
+        return health;
+    }
+
+    public void setHealth(int newHealth){
+        this.health = newHealth;
+    }
+
+    public void addHealth(int addedHealth){
+        this.health += addedHealth;
+    }
+
+    public String getName(){
+        return name;
+    }
 }
